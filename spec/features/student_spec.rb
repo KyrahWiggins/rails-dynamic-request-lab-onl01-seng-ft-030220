@@ -24,7 +24,7 @@ describe 'Show page' do
     @student = Student.create!(first_name: "Daenerys", last_name: "Targaryen")
   end
 
-  #it 'renders properly' do
+  it 'renders properly' do
     visit "students/#{@student.id}"
     expect(page.status_code).to eq(200)
   end
@@ -34,7 +34,7 @@ describe 'Show page' do
     expect(page).to have_css("h1", text: "Daenerys")
 end
 
-  #it 'renders the last name in a h1 tag' do
+  it 'renders the last name in a h1 tag' do
     visit "students/#{@student.id}"
     expect(page).to have_css("h1", text: "Targaryen")
   end
